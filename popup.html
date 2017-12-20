@@ -1,42 +1,51 @@
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-    }
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
 
-    .context-list-items {
-        white-space: nowrap;
-    }
+            .context-list-items {
+                white-space: nowrap;
+            }
 
-    .context-list-items a {
-        display: block;
-        text-decoration: none;
-        padding: 10px;
-        background: #eee;
-        color: #333;
-    }
+            .context-list-items contextLink {
+                display: block;
+                text-decoration: none;
+                padding: 10px;
+                background: #eee;
+                color: #333;
+                cursor: pointer;
+            }
 
-    .context-list-items a[disabled] {
-        opacity: 0.5;
-        pointer-events: none;
-    }
+            .context-list-items contextLink[disabled] {
+                opacity: 0.5;
+                pointer-events: none;
+            }
 
-    .context-list-items a:focus {
-        outline: none;
-    }
+            .context-list-items contextLink:focus {
+                outline: none;
+            }
 
-    .context-list-items .divider {
-        display: block;
-        height: 1px;
-        background: gray;
-    }
-</style>
+            .context-list-items .divider {
+                display: block;
+                height: 1px;
+                background: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="context-list-items">
+            <contextLink id="contextBlockDomain">Block this domain</contextLink>
+            <!-- TODO: Depending on blocked list, this would quickly add back a blocked domain -->
+            <contextLink disabled>Allow this domain</contextLink>
+            <span class="divider"></span>
+            <!-- TODO: Have this display a list of blocked domains to edit/delete -->
+            <contextLink href disabled>View Blocked List</contextLink>
+        </div>
+        <script src="js/context.js"></script>
 
-<div class="context-list-items">
-    <a href>Block this domain</a>
-    <!-- TODO: Depending on blocked list, this would quickly add back a blocked domain -->
-    <a href disabled>Allow this domain</a>
-    <span class="divider"></span>
-    <!-- TODO: Have this display a list of blocked domains to edit/delete -->
-    <a href disabled>View Blocked List</a>
-</div>
+    </body>
+</html>
