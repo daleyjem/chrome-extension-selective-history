@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+    "name": "Selective History",
+    "description": "This extension allows the user to exclude browser history entries from a blacklist that the user decides.",
+    "version": "1.0",
+    "browser_action": {
+        "default_icon": "images/icons/icon.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "history"
+    ]
+}
